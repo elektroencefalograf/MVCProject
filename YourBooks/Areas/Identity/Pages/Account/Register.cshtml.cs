@@ -87,6 +87,7 @@ namespace YourBooks.Areas.Identity.Pages.Account
             {
                 var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email , FirstName = Input.FirstName,LastName = Input.LastName};
                 var result = await _userManager.CreateAsync(user, Input.Password);
+                var role = await _userManager.AddToRoleAsync(user, "");
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");

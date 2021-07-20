@@ -21,5 +21,6 @@ namespace YourBooks.Areas.Identity.Data
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<YourBooks.Models.ProjectRole> ProjectRole { get; set; }
     }
 }

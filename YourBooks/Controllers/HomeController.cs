@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -28,7 +29,7 @@ namespace YourBooks.Controllers
         }
 
         public IActionResult Privacy()
-        {
+        {   
             return View();
         }
 
