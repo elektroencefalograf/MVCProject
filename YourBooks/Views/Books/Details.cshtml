@@ -1,0 +1,86 @@
+﻿@model YourBooks.Models.BookReviewViewModel
+@using Microsoft.AspNetCore.Identity
+@using YourBooks.Areas.Identity.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.Author)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.Author)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.DateOfPublication)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.DateOfPublication)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.Publisher)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.Publisher)
+        </dd>
+    </dl>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Review
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Review item in Model.Reviews)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReviewBody)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Details">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="BookId" value="@Model.Book.Id" />
+                <input type="hidden" asp-for="Author" value="@Model.Author.Id" />
+                <div class="form-group">
+                    <label asp-for="ReviewBody" class="control-label"></label>
+                    <input asp-for="ReviewBody" class="form-control" />
+                    <span asp-validation-for="ReviewBody" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+}
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\rafaloleksik\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\rafaloleksik\\.nuget\\packages"
+    ]
+  }
+}
