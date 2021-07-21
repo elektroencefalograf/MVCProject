@@ -12,8 +12,7 @@ using Microsoft.Extensions.Hosting;
 using YourBooks.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using SendGrid;
-
-
+using Microsoft.AspNetCore.Identity;
 
 namespace YourBooks
 {
@@ -33,7 +32,7 @@ namespace YourBooks
             services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(
                 Configuration.GetConnectionString("YourBooksDBContextConnection")));
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<AppDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();

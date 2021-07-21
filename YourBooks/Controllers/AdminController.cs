@@ -29,7 +29,7 @@ namespace YourBooks.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(ProjectRole role)
+        public async Task<IActionResult> Create([Bind("RoleName")] ProjectRole role)
         {
             var ProjectRole = await _roleManager.RoleExistsAsync(role.RoleName);
             if (!ProjectRole)

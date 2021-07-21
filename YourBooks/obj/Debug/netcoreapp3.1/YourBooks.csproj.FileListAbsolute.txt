@@ -200,3 +200,4 @@ C:\Users\rafaloleksik\source\repos\YourBooks\YourBooks\bin\Debug\netcoreapp3.1\S
 C:\Users\rafaloleksik\source\repos\YourBooks\YourBooks\obj\Debug\netcoreapp3.1\YourBooks.csproj.CoreCompileInputs.cache
 C:\Users\rafaloleksik\source\repos\YourBooks\YourBooks\obj\Debug\netcoreapp3.1\YourBooks.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\rafaloleksik\source\repos\YourBooks\YourBooks\obj\Debug\netcoreapp3.1\YourBooks.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rafaloleksik\source\repos\YourBooks\YourBooks\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Create.cshtml.g.cs
